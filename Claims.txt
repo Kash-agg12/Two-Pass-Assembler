@@ -1,0 +1,75 @@
+/*****************************************************************************
+TITLE: Claims
+AUTHOR: Kashika Aggarwal - 2201CS35
+Declaration of Authorship
+This txt file, claims.txt, is part of the assignment of CS210 Computer Architecture.
+*****************************************************************************/
+
+=======
+Files:
+=======
+* All the files submitted, asm.cpp, emu.cpp, and claims.txt, have my name and roll number at the start, along with a declaration of authorship.
+
+* The evidence for the assembler includes the output files from the seven test examples: test1(3 output files), test2(2 output files), test3(3 output files), test4(3 output files), MyBubbleSort(3 output files), test5(3 output files), test6(3 output files), and test7(2 output files). All the test files have been tested and work properly.
+
+* Both of my C++ programs did not show any errors and warnings when I compiled them with g++ asm.cpp -o asm and g++ emu.cpp -o emu.
+
+* Both programs are compilable with g++ asm.cpp -o asm and g++ emu.cpp -o emu.
+
+=============================
+Program format and structure:
+=============================
+1. The assembler:
+
+   * It includes data structures to store labels and mnemonic table with expected operands as follows:
+	~ TableOfSymbols: Vector of symbols representing labels.
+	~ TableOfLiterals: Vector of literals.
+	~ MOT_TableEntries: Map of mnemonic to opcode entries.
+   * It includes various custom functions as listed:
+	~ LengthOfString: Calculates the length of a string.
+	~ my_begin: Returns a pointer to the beginning of a string.
+	~ space_iss: Checks if a character is whitespace.
+	~ rub: Erases a substring from a string.
+	~ dizit: Checks if a character is a digit.
+	~ SubS: Returns a substring of a string.
+	~ locate: Finds the position of a substring in a string.
+	~ rub2: Erases a substring from a string.
+	~ StoulFunc: Custom implementation of stoul function.
+	~ trim: Trims leading and trailing whitespace from a string.
+	~ locate_if: Finds the first element in a range satisfying a predicate.
+	~ Push_In: Inserts an element at the end of a vector.
+	~ Receive_Line: Reads a line from a file stream. etc.
+   * It uses a single routine for both passes.
+   * It detects label errors.
+   * The formatting is consistent and sensible with a sensible program structure.
+   * It uses sensible variable, function, and type names with explanatory comments.
+   * It generates an advanced listing file.
+   * It assembles test programs properly.
+   * It implements and demonstrates the instruction SET.
+
+2. The emulator:
+
+   * It includes three data structures to store memory, mnemonic table with expected operands, and a linked list structure word.
+   * It loads the object file.
+   * It produces memory dump before/after execution when giving instructions like "-before/-after".
+   * It prints the result of program execution when giving the instruction like "-trace".
+   * It consists of several utility functions for input/output, file operations, memory manipulation, and instruction tracing.
+   * It defines global variables for registers and memory, and initializes the memory with machine code read from the input object file.
+   * The main function handles command-line arguments, opens input/output files, and executes memory dump or instruction tracing based on the specified option.
+   * It detects errant programs properly.
+
+=============================
+Testing:
+=============================
+
+1. The assembler:
+
+	* I have tested seven examples as follows. Errors occurred only in the files test2.asm and test7.asm, which were listed on implementation using g++ itself.
+
+	* The others were tested without any errors detected and produced three output files, listing file, error log file, and machine-readable object file, for each example.
+
+2. The emulator:
+
+	* I have tested three examples as follows. The first one was an infinite loop, and the output for that was a segmentation fault. The other two were without any errors.
+
+	* After running the binary file given, the trace data are the same as the implemented result from my own program. The trace data is provided with the zip file.
